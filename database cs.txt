@@ -1,0 +1,7 @@
+Server: hujangak.database.windows.net,1433 \r\nSQL Database: hujangak\r\nUser Name: hujangak\r\n\r\nPHP Data Objects(PDO) Sample Code:\r\n\r\ntry {\r\n   $conn = new PDO ( \"sqlsrv:server = tcp:hujangak.database.windows.net,1433; Database = hujangak\", \"hujangak\", \"{your_password_here}\");\r\n    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );\r\n}\r\ncatch ( PDOException $e ) {\r\n   print( \"Error connecting to SQL Server.\" );\r\n   die(print_r($e));\r\n}\r\n\rSQL Server Extension Sample Code:\r\n\r\n$connectionInfo = array(\"UID\" => \"hujangak@hujangak\", \"pwd\" => \"{your_password_here}\", \"Database\" => \"hujangak\", \"LoginTimeout\" => 30, \"Encrypt\" => 1, \"TrustServerCertificate\" => 0);\r\n$serverName = \"tcp:hujangak.database.windows.net,1433\";\r\n$conn = sqlsrv_connect($serverName, $connectionInfo);
+
+
+
+
+
+Driver={SQL Server Native Client 11.0};Server=tcp:hujangak.database.windows.net,1433;Database=hujangak;Uid=hujangak@hujangak;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
